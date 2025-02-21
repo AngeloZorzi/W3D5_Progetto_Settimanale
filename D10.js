@@ -60,36 +60,76 @@ console.log(me);
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
+const dice = function () {
+  const randomNumber = Math.ceil(Math.random() * 6);
+  return randomNumber;
+};
+console.log(dice());
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
-
+const whoIsBigger = function (n1, n2) {
+  if (n1 > n2) {
+    return n1;
+  } else {
+    return n2;
+  }
+};
+console.log(whoIsBigger(30, 20));
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
-
+const splitMe = function (s) {
+  return s.split(" ");
+};
+console.log(splitMe("Voglio Andare Al Mare"));
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
-
+const deleteOne = function (s, booleano) {
+  if (booleano === true) {
+    return s.slice(1);
+  } else {
+    return s.slice(0, -1);
+  }
+};
+console.log(deleteOne("Topogigio", true));
+console.log(deleteOne("Topogigio", false));
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
-
+const onlyLetters = function (s) {
+  const removeNumbers = s.replace(/\d/g, "");
+  return removeNumbers;
+};
+console.log(onlyLetters("a123iu473to09"));
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
-
+const isThisAnEmail = function (s) {
+  if (s.includes("@")) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(isThisAnEmail("angelo@xgoo.com"));
+console.log(isThisAnEmail("angeloxgoo.com"));
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
-
+const whatDayIsIt = function () {
+  const currentDay = new Date();
+  currentDay.getDay();
+  return currentDay;
+};
+console.log(whatDayIsIt());
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
