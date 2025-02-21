@@ -191,86 +191,13 @@ console.log(isTodayMyBirthday());
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 const oggetto = { s: "angelo", day: 21 };
-const deleteProp = function (obj, s) {
-  delete obj[s];
-  return obj;
+const deleteProp = function (og, s) {
+  delete og[s];
+  return og;
 };
 console.log(deleteProp(oggetto, "s"));
 
-//Ho spostato gli esercizi di movies in fondo Stefano :)
-
-// DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
-
-/* ESERCIZIO 20
-Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
-*/
-const idSelector = function () {
-  return document.getElementById("container");
-};
-console.log(idSelector());
-/* ESERCIZIO 21
-  Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
-  */
-
-/* ESERCIZIO 22
- Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
-*/
-
-/* ESERCIZIO 23
-Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
-*/
-
-/* ESERCIZIO 24
-Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
-*/
-
-/* ESERCIZIO 25
-Scrivi una funzione per svuotare la lista non ordinata con id "myList".
-*/
-
-/* ESERCIZIO 26
-Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
-*/
-
-// [EXTRA] JS Avanzato
-
-/* ESERCIZIO 27
-Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
-
-Esempio:
-halfTree(3)
-
-*
-**
-***
-
-*/
-
-/* ESERCIZIO 28
-Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
-
-Esempio:
-tree(3)
-
-*
-***
-*****
-
-*/
-
-/* ESERCIZIO 29
-Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
-*/
-const isItPrime = function (n) {
-  if (n % 1 === 0 && n % n === 0 && n % 2 !== 0) {
-    return true;
-  } else {
-    return false;
-  }
-};
-console.log(isItPrime(7));
-
-/* Questo array viene usato per gli esercizi. Non modificarlo. */
+/* Questo array viene usato per gli esercizi. Non modificarlo. */ // Ho spostato tutto l'array in alto :)
 
 const movies = [
   {
@@ -424,23 +351,126 @@ console.log(onlyTheYears());
 */
 const onlyInLastMillennium = function () {
   return movies.filter(
-    (movie) => parseInt(movie.Year) >= 1000 && parseInt(movie.Year) < 2000
+    (film) => parseInt(film.Year) >= 1000 && parseInt(film.Year) < 2000
   );
 };
 console.log(onlyInLastMillennium());
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+const sumAllTheYears = function () {};
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
-
+const searchByTitle = function () {};
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
-
+const searchAndDivide = function () {};
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+const removeIndex = function () {};
+// DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
+
+/* ESERCIZIO 20
+Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
+*/
+const idSelector = function () {
+  return document.getElementById("container");
+};
+console.log(idSelector());
+/* ESERCIZIO 21
+  Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
+  */
+const tdSelector = function () {
+  return document.getElementsByTagName("td");
+};
+console.log(tdSelector());
+/* ESERCIZIO 22
+ Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
+*/
+const cicleTd = function () {
+  const callTd = tdSelector();
+  for (let i = 0; i < callTd.length; i++) {
+    console.log(callTd[i].textContent);
+  }
+};
+cicleTd();
+/* ESERCIZIO 23
+Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
+*/
+const colore = function () {
+  const allTheLinks = document.getElementsByTagName("a");
+  for (let i = 0; i < allTheLinks.length; i++) {
+    allTheLinks[i].style.backgroundColor = "red";
+  }
+};
+colore();
+/* ESERCIZIO 24
+Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
+*/
+const newElement = function () {
+  const ulList = document.getElementById("myList");
+  const newLi = document.createElement("li");
+  newLi.innerText = "ciao";
+  ulList.appendChild(newLi);
+};
+newElement();
+/* ESERCIZIO 25
+Scrivi una funzione per svuotare la lista non ordinata con id "myList".
+*/
+const empty = function () {
+  const myList = document.getElementById("myList");
+  myList.innerHTML = "";
+};
+empty();
+/* ESERCIZIO 26
+Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
+*/
+const cssClass = function () {
+  const tR = document.getElementsByTagName("tr");
+  for (let i = 0; i < tR.length; i++) {
+    tR[i].classList.add("test");
+  }
+};
+cssClass();
+// [EXTRA] JS Avanzato
+
+/* ESERCIZIO 27
+Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
+
+Esempio:
+halfTree(3)
+
+*
+**
+***
+
+*/
+
+/* ESERCIZIO 28
+Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
+
+Esempio:
+tree(3)
+
+*
+***
+*****
+
+*/
+
+/* ESERCIZIO 29
+Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
+*/
+const isItPrime = function (n) {
+  if (n % 1 === 0 && n % n === 0 && n % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(isItPrime(7));
